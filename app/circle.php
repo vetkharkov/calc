@@ -1,44 +1,36 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: vet
  * Date: 19.03.17
  * Time: 20:14
  */
-class circle
+class Circle
 {
     private $radius = 0;
 
-    public function GetRadius()
-    {
-        return $this->radius;
-    }
-
-    public function SetRadius($rad)
+    private function SetRadius($rad)
     {
         $this->radius = $rad;
     }
 
-    public function Area()
+    public function Area($r)
     {
+        $this->SetRadius($r);
         $rad = $this->radius;
         return M_PI * ($rad * $rad);
     }
 
-    public function Perimeter()
+    public function Perimeter($r)
     {
-        return 2 * M_PI * $this->GetRadius();
+        $this->SetRadius($r);
+        return 2 * M_PI * $this->radius;
     }
 
-    public function Diameter()
+    public function Diameter($r)
     {
+        $this->SetRadius($r);
         $rad = $this->radius;
         return 2 * $rad;
     }
 }
-
-
-
-
-

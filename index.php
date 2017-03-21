@@ -2,7 +2,6 @@
 
 $rad = (isset($_POST['rad'])) ? $_POST['rad'] : 0;
 
-//echo $rad . "<br>";
 /**
  * Created by PhpStorm.
  * User: vet
@@ -11,18 +10,13 @@ $rad = (isset($_POST['rad'])) ? $_POST['rad'] : 0;
  */
 require_once __DIR__ . "/app/circle.php";
 
-$circle = new circle();
+$circle = new Circle();
 
-$circle->SetRadius($rad);
+$area_circle = $circle->Area($rad);
 
-$area_circle = $circle->Area();
-//echo $circle->Area() . "<br>";
+$length_circle = $circle->Perimeter($rad);
 
-$length_circle = $circle->Perimeter();
-//echo $circle->Perimeter() . "<br>";
-
-$diameter_circle = $circle->Diameter();
-//echo $circle->Diameter() . "<br>";
+$diameter_circle = $circle->Diameter($rad);
 ?>
 <!DOCTYPE html>
 <html lang="en">
