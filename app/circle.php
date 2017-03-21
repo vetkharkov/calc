@@ -15,7 +15,7 @@ class Circle
         self::$radius = $rad;
     }
 
-    public function Area($r)
+    public static function Area($r)
     {
         self::SetRadius($r);
         $rad = self::$radius;
