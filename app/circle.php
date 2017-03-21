@@ -6,24 +6,35 @@
  * Date: 19.03.17
  * Time: 20:14
  */
-class Circle
+class circle
 {
-    public static $radius;
+    private $radius = 0;
+
+    public function GetRadius()
+    {
+        return $this->radius;
+    }
+
+    public function SetRadius($rad)
+    {
+        $this->radius = $rad;
+    }
 
     public function Area()
     {
-        $rad = self::$radius;
+        $rad = $this->radius;
         return M_PI * ($rad * $rad);
     }
 
-    public static function Perimeter()
+    public function Perimeter()
     {
-        return 2 * M_PI * self::$radius;
+        return 2 * M_PI * $this->GetRadius();
     }
 
-    public static function Diameter()
+    public function Diameter()
     {
-        return 2 * self::$radius;
+        $rad = $this->radius;
+        return 2 * $rad;
     }
 }
 

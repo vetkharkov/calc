@@ -2,6 +2,7 @@
 
 $rad = (isset($_POST['rad'])) ? $_POST['rad'] : 0;
 
+//echo $rad . "<br>";
 /**
  * Created by PhpStorm.
  * User: vet
@@ -10,13 +11,18 @@ $rad = (isset($_POST['rad'])) ? $_POST['rad'] : 0;
  */
 require_once __DIR__ . "/app/circle.php";
 
-Circle::$radius = $rad;
+$circle = new circle();
 
-$area_circle = Circle::Area() . "<br>";
+$circle->SetRadius($rad);
 
-$length_circle = Circle::Perimeter() . "<br>";
+$area_circle = $circle->Area();
+//echo $circle->Area() . "<br>";
 
-$diameter_circle = Circle::Diameter() . "<br>";
+$length_circle = $circle->Perimeter();
+//echo $circle->Perimeter() . "<br>";
+
+$diameter_circle = $circle->Diameter();
+//echo $circle->Diameter() . "<br>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +36,7 @@ $diameter_circle = Circle::Diameter() . "<br>";
 <div class="container">
     <div class="row">
         <form method="post" action=""
-              class="form-horizontal col-md-6">
+              class="form-horizontal col-md-6 col-md-offset-3">
             <h3>Программа для расчета площади и периметра круга.</h3>
             <div class="form-group">
                 <label for="input1" class="col-sm-3 control-label">Введите радиус круга</label>
