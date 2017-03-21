@@ -10,13 +10,13 @@ $rad = (isset($_POST['rad'])) ? $_POST['rad'] : 0;
  */
 require_once __DIR__ . "/app/circle.php";
 
-Circle::$radius = $rad;
+Circle::SetRadius($rad);
 
-$area_circle = Circle::Area() . "<br>";
+$area_circle = Circle::Area();
 
-$length_circle = Circle::Perimeter() . "<br>";
+$length_circle = Circle::Perimeter();
 
-$diameter_circle = Circle::Diameter() . "<br>";
+$diameter_circle = Circle::Diameter();
 ?>
 <!DOCTYPE html>
 <html lang="en">

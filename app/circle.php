@@ -8,7 +8,12 @@
  */
 class Circle
 {
-    public static $radius;
+    private static $radius;
+
+    public function SetRadius($rad)
+    {
+        self::$radius = $rad;
+    }
 
     public function Area()
     {
